@@ -1,0 +1,68 @@
+Objective: ExpressJS API - Blog Application
+
+1. What is the main objective?
+	- Develop a blog application that allows authenticated users to perform CRUD (Create, Read, Update, Delete) operations on blog posts.
+
+2. Who are the target users of the application?
+	- Blog users
+    - Admin
+
+3. What are the key features?
+	- User Registration
+	- User Authentication
+	- Authenticated User can create posts
+	- Authenticated User can edit posts
+	- Authenticated User can delete posts
+    - Admin User can create posts
+	- Admin User can update posts
+	- Admin User can delete any post
+    - Admin User can delete any comments
+    - All Users can retrieve all posts
+    - All Users can retrieve a single post
+    - All Users can view comments in a single post
+    - All Users can comment on each post
+
+4. What structure of data in the application we need to store and manage?
+	- User
+        - Username
+		- Email
+		- Password
+		- isAdmin
+	- Post
+		- Title
+        - Content
+        - Author
+            - Username
+            - Email
+        - comments
+        - createdOn
+
+5. Specific Technical Requirements
+	- ExpressJS API
+	- MongoDB/Mongoose
+	- REST API
+
+6. Other Requirements
+	- JWT Token for Authentication
+	- bcrypt
+
+7. What are your possible routes?
+	
+	- This should depend on your models.
+
+		- User
+
+			POST - /users/login - user login
+			POST - /users/register - user registration
+            GET - /users/details - user details
+
+		- Post
+
+			POST /posts/addPost - add post			
+			GET /posts/getAllPosts - retrieve all posts
+            GET /posts/getPost/:postId - retrieve a single post
+			PATCH /posts/updatePost/:postId - update post
+			DELETE /posts/deletePost/:postId - delete a single post
+            DELETE /posts/deleteComment/:postId/:commentId - delete a single comment
+			PATCH /posts/addComment/:postId - add comment
+			GET /posts/getComments/:postId - get comments
